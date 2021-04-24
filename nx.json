@@ -23,12 +23,18 @@
     }
   },
   "projects": {
-    "real-state": {
+    "real-estate": {
       "tags": []
     },
-    "real-state-e2e": {
+    "real-estate-e2e": {
       "tags": [],
-      "implicitDependencies": ["real-state"]
+      "implicitDependencies": ["real-estate"]
+    },
+    "real-estate-property-feature-shell": {
+      "tags": []
+    },
+    "real-estate-property-data-access": {
+      "tags": []
     }
   }
 }

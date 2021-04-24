@@ -14,7 +14,14 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@hoolan-dev/real-estate/property/feature-shell": [
+        "libs/real-estate/property/feature-shell/src/index.ts"
+      ],
+      "@hoolan-dev/real-estate/property/data-access": [
+        "libs/real-estate/property/data-access/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

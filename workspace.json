@@ -1,9 +1,9 @@
 {
   "version": 2,
   "projects": {
-    "real-state": {
-      "root": "apps/real-state",
-      "sourceRoot": "apps/real-state",
+    "real-estate": {
+      "root": "apps/real-estate",
+      "sourceRoot": "apps/real-estate",
       "projectType": "application",
       "targets": {
         "build": {
@@ -12,8 +12,8 @@
             "{options.outputPath}"
           ],
           "options": {
-            "root": "apps/real-state",
-            "outputPath": "dist/apps/real-state"
+            "root": "apps/real-estate",
+            "outputPath": "dist/apps/real-estate"
           },
           "configurations": {
             "production": {}
@@ -22,12 +22,12 @@
         "serve": {
           "executor": "@nrwl/next:server",
           "options": {
-            "buildTarget": "real-state:build",
+            "buildTarget": "real-estate:build",
             "dev": true
           },
           "configurations": {
             "production": {
-              "buildTarget": "real-state:build:production",
+              "buildTarget": "real-estate:build:production",
               "dev": false
             }
           }
@@ -35,44 +35,44 @@
         "export": {
           "executor": "@nrwl/next:export",
           "options": {
-            "buildTarget": "real-state:build:production"
+            "buildTarget": "real-estate:build:production"
           }
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "apps/real-state/**/*.{ts,tsx}"
+              "apps/real-estate/**/*.{ts,tsx}"
             ]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
           "outputs": [
-            "coverage/apps/real-state"
+            "coverage/apps/real-estate"
           ],
           "options": {
-            "jestConfig": "apps/real-state/jest.config.js",
+            "jestConfig": "apps/real-estate/jest.config.js",
             "passWithNoTests": true
           }
         }
       }
     },
-    "real-state-e2e": {
-      "root": "apps/real-state-e2e",
-      "sourceRoot": "apps/real-state-e2e/src",
+    "real-estate-e2e": {
+      "root": "apps/real-estate-e2e",
+      "sourceRoot": "apps/real-estate-e2e/src",
       "projectType": "application",
       "targets": {
         "e2e": {
           "executor": "@nrwl/cypress:cypress",
           "options": {
-            "cypressConfig": "apps/real-state-e2e/cypress.json",
-            "tsConfig": "apps/real-state-e2e/tsconfig.e2e.json",
-            "devServerTarget": "real-state:serve"
+            "cypressConfig": "apps/real-estate-e2e/cypress.json",
+            "tsConfig": "apps/real-estate-e2e/tsconfig.e2e.json",
+            "devServerTarget": "real-estate:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "real-state:serve:production"
+              "devServerTarget": "real-estate:serve:production"
             }
           }
         },
@@ -80,8 +80,58 @@
           "executor": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "apps/real-state-e2e/**/*.{js,ts}"
+              "apps/real-estate-e2e/**/*.{js,ts}"
             ]
+          }
+        }
+      }
+    },
+    "real-estate-property-feature-shell": {
+      "root": "libs/real-estate/property/feature-shell",
+      "sourceRoot": "libs/real-estate/property/feature-shell/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/real-estate/property/feature-shell/**/*.{ts,tsx,js,jsx}"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/real-estate/property/feature-shell"
+          ],
+          "options": {
+            "jestConfig": "libs/real-estate/property/feature-shell/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "real-estate-property-data-access": {
+      "root": "libs/real-estate/property/data-access",
+      "sourceRoot": "libs/real-estate/property/data-access/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/real-estate/property/data-access/**/*.{ts,tsx,js,jsx}"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/real-estate/property/data-access"
+          ],
+          "options": {
+            "jestConfig": "libs/real-estate/property/data-access/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }
@@ -103,5 +153,5 @@
       }
     }
   },
-  "defaultProject": "real-state"
+  "defaultProject": "real-estate"
 }
