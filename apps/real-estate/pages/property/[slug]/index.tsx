@@ -132,7 +132,7 @@ function Example({property}) {
             </dd>
           </div>
           <div className="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-            <dt className="text-sm font-medium text-gray-500">Real Estate Registration</dt>
+            <dt className="text-sm font-medium text-gray-500">Registration</dt>
             <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
               { property.identification.registration }
             </dd>
@@ -170,7 +170,7 @@ function Example({property}) {
       <div className="border-t border-gray-200 px-4 py-5 sm:p-0">
         <dl className="sm:divide-y sm:divide-gray-200">
           <div className="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-            <dt className="text-sm font-medium text-gray-500">Chip</dt>
+            <dt className="text-sm font-medium text-gray-500">Name</dt>
             <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
               {property.contributor.name}
             </dd>
