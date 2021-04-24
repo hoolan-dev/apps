@@ -1,0 +1,107 @@
+{
+  "version": 2,
+  "projects": {
+    "real-state": {
+      "root": "apps/real-state",
+      "sourceRoot": "apps/real-state",
+      "projectType": "application",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/next:build",
+          "outputs": [
+            "{options.outputPath}"
+          ],
+          "options": {
+            "root": "apps/real-state",
+            "outputPath": "dist/apps/real-state"
+          },
+          "configurations": {
+            "production": {}
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/next:server",
+          "options": {
+            "buildTarget": "real-state:build",
+            "dev": true
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "real-state:build:production",
+              "dev": false
+            }
+          }
+        },
+        "export": {
+          "executor": "@nrwl/next:export",
+          "options": {
+            "buildTarget": "real-state:build:production"
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/real-state/**/*.{ts,tsx}"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/apps/real-state"
+          ],
+          "options": {
+            "jestConfig": "apps/real-state/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "real-state-e2e": {
+      "root": "apps/real-state-e2e",
+      "sourceRoot": "apps/real-state-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/real-state-e2e/cypress.json",
+            "tsConfig": "apps/real-state-e2e/tsconfig.e2e.json",
+            "devServerTarget": "real-state:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "real-state:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/real-state-e2e/**/*.{js,ts}"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/next"
+  },
+  "generators": {
+    "@nrwl/react": {
+      "application": {
+        "babel": true
+      }
+    },
+    "@nrwl/next": {
+      "application": {
+        "style": "css",
+        "linter": "eslint"
+      }
+    }
+  },
+  "defaultProject": "real-state"
+}
