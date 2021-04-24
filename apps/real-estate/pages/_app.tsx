@@ -56,7 +56,6 @@ export default function Example({ Component, pageProps }: AppProps) {
                         ) : (
                           <Link href={item.slug}>
                           <a
-                            key={item.slug}
                             className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                           >
                             {item.name}

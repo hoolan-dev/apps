@@ -47,7 +47,7 @@ const properties = [
   },
 ];
 
-function Example({property}) {
+function ExampleTwo({property}) {
   return (
     <>
     <div className="mb-8">
@@ -213,12 +213,10 @@ function Example({property}) {
     );
 }
 
-export default Example;
+export default ExampleTwo;
 
-export const  getStaticProps = ({params}) => {
+export const  getServerSideProps = ({params}) => {
   const { slug } = params;
-
-  console.warn(properties.find((property) => property.refCollection === slug));
 
   return {
       props: {
@@ -227,16 +225,16 @@ export const  getStaticProps = ({params}) => {
   }
 }
 
-export const getStaticPaths = (p) =>{
-  return {
-    paths: [
-      { params: { slug: '21928382922192838292' } },
-      { params: { slug: '2192838293' } }
-    ],
-    fallback: false
-  }
+// export const getStaticPaths = (p) =>{
+//   return {
+//     paths: [
+//       { params: { slug: '21928382922192838292' } },
+//       // { params: { slug: '2192838293' } }
+//     ],
+//     fallback: false
+//   }
   
-}
+// }
 
 
 
