@@ -43,8 +43,7 @@ export default function Example({ Component, pageProps }: AppProps) {
                     <div className="ml-10 flex items-baseline space-x-4">
                       {navigation.map((item, itemIdx) =>
                         itemIdx === 0 ? (
-                          <Fragment key={item.slug}>
-                            <Link href={item.slug}>
+                            <Link key={itemIdx} href={item.slug}>
                             {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
                             <a
                               className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
@@ -52,9 +51,8 @@ export default function Example({ Component, pageProps }: AppProps) {
                               {item.name}
                             </a>
                             </Link>
-                          </Fragment>
                         ) : (
-                          <Link href={item.slug}>
+                          <Link href={item.slug} key={itemIdx}>
                           <a
                             className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                           >
