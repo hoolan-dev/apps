@@ -20,6 +20,9 @@
       ],
       "@hoolan-dev/real-estate/property/data-access": [
         "libs/real-estate/property/data-access/src/index.ts"
+      ],
+      "@hoolan-dev/real-estate/property/ui": [
+        "libs/real-estate/property/ui/src/index.ts"
       ]
     }
   },

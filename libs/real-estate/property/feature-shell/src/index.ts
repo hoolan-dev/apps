@@ -1,1 +1,1 @@
-export * from './lib/real-estate-property-feature-shell';
+export * from './lib/property-form';

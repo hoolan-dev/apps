@@ -135,6 +135,31 @@
           }
         }
       }
+    },
+    "real-estate-property-ui": {
+      "root": "libs/real-estate/property/ui",
+      "sourceRoot": "libs/real-estate/property/ui/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/real-estate/property/ui/**/*.{ts,tsx,js,jsx}"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/real-estate/property/ui"
+          ],
+          "options": {
+            "jestConfig": "libs/real-estate/property/ui/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

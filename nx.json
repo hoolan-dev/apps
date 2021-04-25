@@ -35,6 +35,9 @@
     },
     "real-estate-property-data-access": {
       "tags": []
+    },
+    "real-estate-property-ui": {
+      "tags": []
     }
   }
 }
