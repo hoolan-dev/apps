@@ -10,21 +10,27 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "lib": ["es2017", "dom"],
+    "lib": [
+      "es2017",
+      "dom"
+    ],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@hoolan-dev/real-estate/property/feature-shell": [
-        "libs/real-estate/property/feature-shell/src/index.ts"
+      "@hoolan-dev/real-estate/frontend/property/data-access": [
+        "libs/real-estate/frontend/property/data-access/src/index.ts"
       ],
-      "@hoolan-dev/real-estate/property/data-access": [
-        "libs/real-estate/property/data-access/src/index.ts"
+      "@hoolan-dev/real-estate/frontend/property/feature-shell": [
+        "libs/real-estate/frontend/property/feature-shell/src/index.ts"
       ],
-      "@hoolan-dev/real-estate/property/ui": [
-        "libs/real-estate/property/ui/src/index.ts"
+      "@hoolan-dev/real-estate/frontend/property/ui": [
+        "libs/real-estate/frontend/property/ui/src/index.ts"
       ]
     }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
 }

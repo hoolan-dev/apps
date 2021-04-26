@@ -86,76 +86,76 @@
         }
       }
     },
-    "real-estate-property-feature-shell": {
-      "root": "libs/real-estate/property/feature-shell",
-      "sourceRoot": "libs/real-estate/property/feature-shell/src",
+    "real-estate-frontend-property-data-access": {
+      "root": "libs/real-estate/frontend/property/data-access",
+      "sourceRoot": "libs/real-estate/frontend/property/data-access/src",
       "projectType": "library",
       "targets": {
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "libs/real-estate/property/feature-shell/**/*.{ts,tsx,js,jsx}"
+              "libs/real-estate/frontend/property/data-access/**/*.{ts,tsx,js,jsx}"
             ]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
           "outputs": [
-            "coverage/libs/real-estate/property/feature-shell"
+            "coverage/libs/real-estate/frontend/property/data-access"
           ],
           "options": {
-            "jestConfig": "libs/real-estate/property/feature-shell/jest.config.js",
+            "jestConfig": "libs/real-estate/frontend/property/data-access/jest.config.js",
             "passWithNoTests": true
           }
         }
       }
     },
-    "real-estate-property-data-access": {
-      "root": "libs/real-estate/property/data-access",
-      "sourceRoot": "libs/real-estate/property/data-access/src",
+    "real-estate-frontend-property-feature-shell": {
+      "root": "libs/real-estate/frontend/property/feature-shell",
+      "sourceRoot": "libs/real-estate/frontend/property/feature-shell/src",
       "projectType": "library",
       "targets": {
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "libs/real-estate/property/data-access/**/*.{ts,tsx,js,jsx}"
+              "libs/real-estate/frontend/property/feature-shell/**/*.{ts,tsx,js,jsx}"
             ]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
           "outputs": [
-            "coverage/libs/real-estate/property/data-access"
+            "coverage/libs/real-estate/frontend/property/feature-shell"
           ],
           "options": {
-            "jestConfig": "libs/real-estate/property/data-access/jest.config.js",
+            "jestConfig": "libs/real-estate/frontend/property/feature-shell/jest.config.js",
             "passWithNoTests": true
           }
         }
       }
     },
-    "real-estate-property-ui": {
-      "root": "libs/real-estate/property/ui",
-      "sourceRoot": "libs/real-estate/property/ui/src",
+    "real-estate-frontend-property-ui": {
+      "root": "libs/real-estate/frontend/property/ui",
+      "sourceRoot": "libs/real-estate/frontend/property/ui/src",
       "projectType": "library",
       "targets": {
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "libs/real-estate/property/ui/**/*.{ts,tsx,js,jsx}"
+              "libs/real-estate/frontend/property/ui/**/*.{ts,tsx,js,jsx}"
             ]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
           "outputs": [
-            "coverage/libs/real-estate/property/ui"
+            "coverage/libs/real-estate/frontend/property/ui"
           ],
           "options": {
-            "jestConfig": "libs/real-estate/property/ui/jest.config.js",
+            "jestConfig": "libs/real-estate/frontend/property/ui/jest.config.js",
             "passWithNoTests": true
           }
         }

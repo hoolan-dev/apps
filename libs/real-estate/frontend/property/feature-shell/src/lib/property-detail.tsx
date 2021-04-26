@@ -4,7 +4,7 @@ import {
   MailIcon,
 } from '@heroicons/react/solid';
 import Link from 'next/link';
-import { properties } from '@hoolan-dev/real-estate/property/data-access';
+import { properties } from '@hoolan-dev/real-estate/frontend/property/data-access';
 
 export function PropertyDetail({property}) {
   return (

@@ -1,6 +1,6 @@
 module.exports = {
-  displayName: 'real-estate-property-data-access',
-  preset: '../../../../jest.preset.js',
+  displayName: 'real-estate-frontend-property-ui',
+  preset: '../../../../../jest.preset.js',
   transform: {
     '^.+\\.[tj]sx?$': [
       'babel-jest',
@@ -8,6 +8,5 @@ module.exports = {
     ],
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-  coverageDirectory:
-    '../../../../coverage/libs/real-estate/property/data-access',
+  coverageDirectory: '../../../../../coverage/libs/real-estate/frontend/property/ui',
 };

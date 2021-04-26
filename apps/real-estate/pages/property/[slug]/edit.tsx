@@ -1,6 +1,6 @@
 import React from 'react';
-import { properties } from '@hoolan-dev/real-estate/property/data-access';
-import { PropertyForm } from '@hoolan-dev/real-estate/property/feature-shell';
+import { properties } from '@hoolan-dev/real-estate/frontend/property/data-access';
+import { PropertyForm } from '@hoolan-dev/real-estate/frontend/property/feature-shell';
 
 function PropertyEditPage({ property }) {
   return (

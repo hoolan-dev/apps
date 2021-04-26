@@ -1,7 +1,7 @@
 import React from 'react';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/solid';
 import Link from 'next/link';
-import { properties, usePropertyList } from '@hoolan-dev/real-estate/property/data-access';
+import { properties, usePropertyList } from '@hoolan-dev/real-estate/frontend/property/data-access';
 
 export function PropertyList({ properties  }) {
   const { data, error} = usePropertyList();
