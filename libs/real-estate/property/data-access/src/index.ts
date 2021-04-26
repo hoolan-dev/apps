@@ -1,1 +1,1 @@
-export * from './lib/real-estate-property-data-access';
+export * from './lib/property.service';

@@ -1,13 +1,14 @@
-import React, { useCallback, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import {
   FieldControl,
   FieldGroup,
   FormBuilder,
   Validators,
 } from 'react-reactive-form';
-export function PropertyForm() {
+export function PropertyForm({property}) {
   const customForm = FormBuilder.group({
-    refCollection: ['aa', Validators.required],
+    id: [''],
+    refCollection: ['', Validators.required],
     formId: [''],
     identification: FormBuilder.group({
       chip: [''],
@@ -325,14 +326,3 @@ export function PropertyForm() {
   );
 }
 
-export default PropertyForm;
-
-// export const getServerSideProps = ({ params }) => {
-//   const { slug } = params;
-
-//   return {
-//     props: {
-//       property: {},
-//     },
-//   };
-// };

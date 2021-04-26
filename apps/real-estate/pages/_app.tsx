@@ -45,19 +45,19 @@ export default function Example({ Component, pageProps }: AppProps) {
                         itemIdx === 0 ? (
                             <Link key={itemIdx} href={item.slug}>
                             {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
-                            <a
+                            <button
                               className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
                             >
                               {item.name}
-                            </a>
+                            </button>
                             </Link>
                         ) : (
                           <Link href={item.slug} key={itemIdx}>
-                          <a
+                          <button
                             className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                           >
                             {item.name}
-                          </a>
+                          </button>
                           </Link>
                         )
                       )}
