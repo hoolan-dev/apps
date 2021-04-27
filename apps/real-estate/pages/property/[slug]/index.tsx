@@ -10,6 +10,7 @@ function PropertyDetailPage() {
 
   const { data, error} = useProperty({id: slug});
 
+
   return (
     <PropertyDetail property={{...data, ...propertyModel }} />
   );

@@ -1,36 +1,39 @@
+import { usePropertyCreate } from '@hoolan-dev/real-estate/frontend/property/data-access';
 import Link from 'next/link';
-import React, { useMemo } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import {
   FieldControl,
   FieldGroup,
   FormBuilder,
   Validators,
 } from 'react-reactive-form';
-export function PropertyForm({property}) {
+export function PropertyForm({property, handleForm}) {
   const customForm = FormBuilder.group({
-    id: [property.id || ''],
-    refCollection: [property.refCollection || '', Validators.required],
-    formId: [property.formId || ''],
+    id: [property?.id || ''],
+    refCollection: [property?.refCollection || '', Validators.required],
+    formId: [property?.formId || ''],
     identification: FormBuilder.group({
-      chip: [property.identification.chip || ''],
-      address: [property.identification.address || ''],
-      registration: [property.identification.registration || ''],
+      chip: [property?.identification?.chip || ''],
+      address: [property?.identification?.address || ''],
+      registration: [property?.identification?.registration || ''],
       imageUrl: [''],
     }),
     contributor: FormBuilder.group({
-      type: [property.contributor.registration || ''],
-      identification: [property.contributor.identification || ''],
-      name: [property.contributor.name || ''],
-      property: [property.contributor.property || ''],
-      quality: [property.contributor.quality || ''],
-      address: [property.contributor.address || ''],
-      city: [property.contributor.city || ''],
+      type: [property?.contributor?.registration || ''],
+      identification: [property?.contributor?.identification || ''],
+      name: [property?.contributor?.name || ''],
+      property: [property?.contributor?.property || ''],
+      quality: [property?.contributor?.quality || ''],
+      address: [property?.contributor?.address || ''],
+      city: [property?.contributor?.city || ''],
     }),
   });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form values', customForm.value);
+    if(customForm.valid){
+      handleForm(customForm.value);
+    }
   };
 
   return useMemo(
@@ -311,12 +314,15 @@ export function PropertyForm({property}) {
                   <button type="button" className="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Cancel</button>
                 </Link>
                
+               {
+                !property.id ? 
                 <button
                   type="submit"
                   className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
                 >
                   Save
-                </button>
+                </button> : null
+               }
               </div>
             </form>
           )}

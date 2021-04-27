@@ -11,11 +11,7 @@ const navigation = [
   {
     name: 'Dashboard',
     slug: '/',
-  },
-  {
-    name: 'Team',
-    slug: '/team',
-  },
+  }
 ];
 const profile = ['Your Profile', 'Settings', 'Sign out'];
 
@@ -32,32 +28,30 @@ export default function Example({ Component, pageProps }: AppProps) {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="flex items-center justify-between h-16">
                 <div className="flex items-center">
-                  <div className="flex-shrink-0">
+                  <Link href="/">
+                  <div className="flex-shrink-0 cursor-pointer">
                     <img
                       className="h-8 w-8"
                       src="/solana-sol-logo.svg"
                       alt="Real Estate"
                     />
                   </div>
+                  </Link>
                   <div className="hidden md:block">
                     <div className="ml-10 flex items-baseline space-x-4">
                       {navigation.map((item, itemIdx) =>
                         itemIdx === 0 ? (
-                            <Link key={itemIdx} href={item.slug}>
+                          <Link key={itemIdx} href={item.slug}>
                             {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
-                            <button
-                              className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
-                            >
+                            <button className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">
                               {item.name}
                             </button>
-                            </Link>
+                          </Link>
                         ) : (
                           <Link href={item.slug} key={itemIdx}>
-                          <button
-                            className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                          >
-                            {item.name}
-                          </button>
+                            <button className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                              {item.name}
+                            </button>
                           </Link>
                         )
                       )}
@@ -122,8 +116,7 @@ export default function Example({ Component, pageProps }: AppProps) {
                     </Menu>
                   </div>
                 </div>
-                <div className="-mr-2 flex md:hidden">
-                  {/* Mobile menu button */}
+                {/* <div className="-mr-2 flex md:hidden">
                   <Disclosure.Button className="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                     <span className="sr-only">Open main menu</span>
                     {open ? (
@@ -132,7 +125,7 @@ export default function Example({ Component, pageProps }: AppProps) {
                       <MenuIcon className="block h-6 w-6" aria-hidden="true" />
                     )}
                   </Disclosure.Button>
-                </div>
+                </div> */}
               </div>
             </div>
 
@@ -141,23 +134,20 @@ export default function Example({ Component, pageProps }: AppProps) {
                 {navigation.map((item, itemIdx) =>
                   itemIdx === 0 ? (
                     <Fragment key={item.slug}>
-                      <Link
-                      href={item.slug}></Link>
+                      <Link href={item.slug}></Link>
                       {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
-                      <a
-                        className="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
-                      >
+                      <a className="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium">
                         {item.name}
                       </a>
                     </Fragment>
                   ) : (
                     <Link href={item.slug}>
-                    <a
-                      key={item.slug}
-                      className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                    >
-                      {item.name}
-                    </a>
+                      <a
+                        key={item.slug}
+                        className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                      >
+                        {item.name}
+                      </a>
                     </Link>
                   )
                 )}
@@ -203,8 +193,24 @@ export default function Example({ Component, pageProps }: AppProps) {
       </Disclosure>
 
       <header className="bg-white shadow">
-        <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-          <h1 className="text-3xl font-bold text-gray-900">Dashboard</h1>
+        <div className="bg-white px-4 border-b border-gray-200 max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+          <div className="-ml-4 -mt-2 flex items-center justify-between flex-wrap sm:flex-nowrap">
+            <div className="ml-4 mt-2">
+              <h3 className="text-lg leading-6 font-medium text-gray-900">
+                Dashboard
+              </h3>
+            </div>
+            <div className="ml-4 mt-2 flex-shrink-0">
+              <Link href='/property/new'>
+                <button
+                  type="button"
+                  className="relative inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                >
+                  Create new property
+                </button>
+              </Link>
+            </div>
+          </div>
         </div>
       </header>
       <main>

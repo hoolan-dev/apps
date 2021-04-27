@@ -1,7 +1,6 @@
 import React from 'react';
 import { ChevronRightIcon, MailIcon } from '@heroicons/react/solid';
 import Link from 'next/link';
-import { propertyModel } from '@hoolan-dev/real-estate/frontend/property/data-access';
 
 export function PropertyList({ properties }) {
   return (
@@ -9,7 +8,7 @@ export function PropertyList({ properties }) {
       <div className="bg-white shadow overflow-hidden sm:rounded-md">
         <ul className="divide-y divide-gray-200">
           {properties.map((property) => (
-            <li key={property.refCollection}>
+            <li key={property.id}>
               <Link href={`/property/${property.id}`}>
                 <button className="block w-full hover:bg-gray-50">
                   <div className="flex items-center px-4 py-4 sm:px-6">
