@@ -11,6 +11,11 @@ export function usePropertyList(){
    return {data,error}
 }
 
+export function useProperty({id}){
+  const {data, error } = useSWR(`https://hoolan-api.herokuapp.com/api/1.0/property/list?id=${id}`, fetcher);
+  return {data: data ? data[0] : null,error}
+}
+
 export function usePropertyCreate(){
   const {data, error } = useSWR(['https://hoolan-api.herokuapp.com/api/1.0/property/create', {
     method: 'POST',
@@ -22,7 +27,7 @@ export function usePropertyCreate(){
    return {data,error}
 }
 
-export const properties = [
+export const propertyModel = 
     {
       refCollection: '21928382922192838292',
       formId: '11975972597',
@@ -30,7 +35,7 @@ export const properties = [
         chip: '31131',
         address: 'Calle 1 # 12B - 66',
         registration: '20792128',
-        imageUrl: ''
+        imageUrl: 'https://source.unsplash.com/collection/219941'
       },
       contributor: {
         type: 'CC',
@@ -38,28 +43,8 @@ export const properties = [
         name: 'Sebastian AAAA',
         property: '50',
         quality: 'owner',
-        address: '',
+        address: 'Office 35',
         city: 'Bogota',
       },
-    },
-    {
-      refCollection: '2192838293',
-      formId: '12',
-      identification: {
-        chip: '123141',
-        address: 'Calle 2 # 18-29',
-        registration: '2018743',
-        imageUrl:''
-      },
-      contributor: {
-        type: 'CC',
-        identification: '222131',
-        name: 'Het De',
-        property: '100',
-        quality: 'owner',
-        address: 'Calle 45',
-        city: 'Bogota',
-      },
-    },
-  ];
+    };
   

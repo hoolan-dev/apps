@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React, { useMemo } from 'react';
 import {
   FieldControl,
@@ -7,23 +8,23 @@ import {
 } from 'react-reactive-form';
 export function PropertyForm({property}) {
   const customForm = FormBuilder.group({
-    id: [''],
-    refCollection: ['', Validators.required],
-    formId: [''],
+    id: [property.id || ''],
+    refCollection: [property.refCollection || '', Validators.required],
+    formId: [property.formId || ''],
     identification: FormBuilder.group({
-      chip: [''],
-      address: [''],
-      registration: [''],
+      chip: [property.identification.chip || ''],
+      address: [property.identification.address || ''],
+      registration: [property.identification.registration || ''],
       imageUrl: [''],
     }),
     contributor: FormBuilder.group({
-      type: [''],
-      identification: [''],
-      name: [''],
-      property: [''],
-      quality: [''],
-      address: [''],
-      city: [''],
+      type: [property.contributor.registration || ''],
+      identification: [property.contributor.identification || ''],
+      name: [property.contributor.name || ''],
+      property: [property.contributor.property || ''],
+      quality: [property.contributor.quality || ''],
+      address: [property.contributor.address || ''],
+      city: [property.contributor.city || ''],
     }),
   });
 
@@ -34,6 +35,7 @@ export function PropertyForm({property}) {
 
   return useMemo(
     () => (
+      <>
       <div>
         <FieldGroup
           control={customForm}
@@ -304,12 +306,11 @@ export function PropertyForm({property}) {
               </div>
 
               <div className="flex justify-end">
-                <button
-                  type="button"
-                  className="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                >
-                  Cancel
-                </button>
+                
+              <Link href={property.id ? `/property/${property.id}` :'/'}>
+                  <button type="button" className="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Cancel</button>
+                </Link>
+               
                 <button
                   type="submit"
                   className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
@@ -321,6 +322,11 @@ export function PropertyForm({property}) {
           )}
         ></FieldGroup>
       </div>
+      <details className="mx-2 my-5">
+      <summary>Response</summary>
+      <pre>{JSON.stringify(property, null, 2)}</pre>
+    </details>
+      </>
     ),
     []
   );

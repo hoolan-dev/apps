@@ -1,21 +1,17 @@
 import React from 'react';
-import { properties } from '@hoolan-dev/real-estate/frontend/property/data-access';
 import { PropertyForm } from '@hoolan-dev/real-estate/frontend/property/feature-shell';
+import { useRouter } from 'next/router';
+import { propertyModel, useProperty } from '@hoolan-dev/real-estate/frontend/property/data-access';
 
-function PropertyEditPage({ property }) {
+function PropertyEditPage() {
+  const router = useRouter();
+  
+  const { slug } = router.query; 
+
+  const { data, error} = useProperty({id: slug});
   return (
-    <PropertyForm property={property} />
+    <PropertyForm property={{...data, ...propertyModel }} />
   );
 }
 
 export default PropertyEditPage;
-
-export const getServerSideProps = ({ params }) => {
-  const { slug } = params;
-
-  return {
-    props: {
-      property: properties.find((property) => property.refCollection === slug),
-    },
-  };
-};
